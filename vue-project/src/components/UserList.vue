@@ -1,3 +1,4 @@
+
 <template>
 <div>
     <div v-if="loading">Загрузка...</div>
@@ -16,32 +17,8 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from "vue";
-import UserItem from "./UserItem.vue";
-import { fetchUsers } from "../services/api.js";
-
-const props = defineProps({
-    searchQuery: { type: String, default: "" },
-});
-
-const users = ref([]);
-const loading = ref(false);
-const error = ref(null);
-
-onMounted(async () => {
-    loading.value = true;
-    try {
-        users.value = await fetchUsers();
-    } catch (e) {
-    error.value = e.message || String(e);
-    } finally {
-    loading.value = false;
-    }
-});
-
-const filtered = computed(() => {
-    const q = (props.searchQuery || "").toLowerCase().trim();
-    if (!q) return users.value;
-    return users.value.filter((u) => (u.name || "").toLowerCase().includes(q));
-});
+    const props = defineProps({ user: { type: Object, required: true } });
 </script>
+
+
+
