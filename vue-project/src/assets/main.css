@@ -29,7 +29,6 @@ a,
 
   #app {
     display: grid;
-    grid-template-columns: 1fr 1fr;
     padding: 0 2rem;
   }
 }
@@ -46,7 +45,7 @@ body {
   color: #111;
 }
 .container {
-  max-width: 760px;
+  width: 600px;
   margin: 0 auto;
   background: #fff;
   padding: 20px;
