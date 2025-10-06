@@ -1,6 +1,7 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import SearchBar from './components/SearchBar.vue'
+import UserItem from './components/UserItem.vue'
+import UserList from './components/UserList.vue'
 </script>
 
 <template>
